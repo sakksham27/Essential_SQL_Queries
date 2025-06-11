@@ -1,0 +1,13 @@
+-- ===================================================
+-- Query: Retrieve Cities NOT Ending with a Vowel
+-- Description:
+--   Returns distinct city names from the STATION table
+--   where the last character of the city name is NOT a vowel
+--   (i.e., not a, e, i, o, or u). Case-insensitive match.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE RIGHT(LOWER(CITY), 1) NOT IN ('a', 'e', 'i', 'o', 'u');
