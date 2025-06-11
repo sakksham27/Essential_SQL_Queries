@@ -1,0 +1,11 @@
+-- ===================================================
+-- Query: Retrieve All City Records
+-- Description:
+--   Selects all columns and rows from the CITY table.
+--   Useful for getting a complete view of the dataset.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT *
+FROM CITY;
