@@ -1,0 +1,17 @@
+-- ===================================================
+-- Query: Retrieve Names of Recently Hired High-Earning Employees
+-- Description:
+--   Selects employee names from the EMPLOYEE table where:
+--     - Salary is greater than 2000
+--     - Employee has been with the company for less than 10 months
+--   Results are ordered by employee_id in ascending order.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT name
+FROM EMPLOYEE
+WHERE 
+  salary > 2000         -- High-earning employees
+  AND months < 10       -- Recently hired (less than 10 months)
+ORDER BY employee_id;   -- Sort by employee ID
