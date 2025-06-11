@@ -1,0 +1,14 @@
+-- ===================================================
+-- Query: Retrieve Unique Cities with Even ID
+-- Description:
+--   Selects distinct city names from the STATION table
+--   where the ID is an even number (i.e., divisible by 2).
+--   This helps filter out duplicate cities and apply a condition
+--   based on the station ID.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT DISTINCT(city)
+FROM STATION
+WHERE ID % 2 = 0;  -- Only include cities where the station ID is even
