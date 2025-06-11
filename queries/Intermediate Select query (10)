@@ -1,0 +1,26 @@
+-- ===================================================
+-- Query: Shortest and Longest City Names (Alphabetically Sorted)
+-- Description:
+--   Retrieves two records from the STATION table:
+--   1. The city with the shortest name (ties broken alphabetically)
+--   2. The city with the longest name (ties broken alphabetically)
+--   Uses UNION to combine both results into a single output.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+(
+  -- Get the city with the shortest name
+  SELECT CITY, LENGTH(CITY) AS len
+  FROM STATION
+  ORDER BY len ASC, CITY ASC
+  LIMIT 1
+)
+UNION
+(
+  -- Get the city with the longest name
+  SELECT CITY, LENGTH(CITY) AS len
+  FROM STATION
+  ORDER BY len DESC, CITY ASC
+  LIMIT 1
+);
