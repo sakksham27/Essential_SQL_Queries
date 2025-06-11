@@ -1,0 +1,14 @@
+-- ===================================================
+-- Query: Retrieve Names of Japanese Cities
+-- Description:
+--   Selects only the city names from the CITY table for
+--   all cities located in Japan (country code 'JPN').
+--   Useful for listing Japanese city names for mapping,
+--   visualization, or user display purposes.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT name
+FROM CITY
+WHERE countrycode = 'JPN';  -- Filter for cities in Japan
