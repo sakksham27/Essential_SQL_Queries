@@ -1,0 +1,13 @@
+-- ===================================================
+-- Query: Retrieve All Cities in Japan
+-- Description:
+--   Selects all columns from the CITY table for cities
+--   where the country code is 'JPN' (Japan).
+--   Useful for analyzing Japanese city-level data.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT *
+FROM CITY
+WHERE countrycode = 'JPN';  -- Filter for cities in Japan
