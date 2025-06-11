@@ -1,0 +1,15 @@
+-- ===================================================
+-- Query: Retrieve Names of Students Scoring Above 75
+-- Description:
+--   Returns the names of students from the STUDENTS table
+--   who scored more than 75 marks. The result is sorted:
+--     - First, by the last 3 characters of the student's name (alphabetically)
+--     - Then, by ID in ascending order (as a tie-breaker)
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT NAME
+FROM STUDENTS
+WHERE MARKS > 75
+ORDER BY RIGHT(NAME, 3), ID ASC;
