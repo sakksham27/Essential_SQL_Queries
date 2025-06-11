@@ -1,0 +1,22 @@
+-- ===================================================
+-- Query: Classify Triangles by Side Lengths
+-- Description:
+--   Determines the type of triangle based on the side lengths
+--   A, B, and C from the TRIANGLES table.
+--   Classification logic:
+--     - If the sum of any two sides is less than or equal to the third → Not A Triangle
+--     - If all three sides are equal → Equilateral
+--     - If exactly two sides are equal → Isosceles
+--     - If all sides are different → Scalene
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT 
+  CASE 
+    WHEN A + B <= C OR B + C <= A OR C + A <= B THEN 'Not A Triangle'
+    WHEN A = B AND B = C THEN 'Equilateral'
+    WHEN A = B OR B = C OR C = A THEN 'Isosceles'
+    ELSE 'Scalene'
+  END AS tri
+FROM TRIANGLES;
