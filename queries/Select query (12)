@@ -1,0 +1,13 @@
+-- ===================================================
+-- Query: Retrieve Cities Ending with a Vowel
+-- Description:
+--   Returns distinct city names from the STATION table
+--   where the last letter of the city name is a vowel 
+--   (a, e, i, o, u). Case-insensitive matching is used.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE RIGHT(LOWER(CITY), 1) IN ('a', 'e', 'i', 'o', 'u');
