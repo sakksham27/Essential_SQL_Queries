@@ -1,0 +1,14 @@
+-- ================================================
+-- Query: Select large US cities
+-- Description:
+--   Retrieves all columns from the CITY table for cities
+--   in the United States (country code 'USA') with a 
+--   population greater than 100,000.
+-- Author: Saksham Sharma (or your name)
+-- Date: 2025-06-11
+-- ================================================
+
+SELECT *
+FROM CITY
+WHERE countrycode = 'USA'  -- Filter cities located in the United States
+  AND population > 100000; -- Only include cities with population over 100,000
