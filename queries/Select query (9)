@@ -1,0 +1,15 @@
+-- ===================================================
+-- Query: Count of Duplicate City Names
+-- Description:
+--   Calculates the number of duplicate city entries in 
+--   the STATION table by subtracting the count of unique 
+--   cities from the total number of city entries.
+--   If a city appears more than once, it contributes 
+--   to the duplicate count.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT 
+  COUNT(CITY) - COUNT(DISTINCT(CITY)) AS duplicate_city_count
+FROM STATION;
