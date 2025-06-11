@@ -1,0 +1,12 @@
+-- ===================================================
+-- Query: Retrieve City and State from STATION Table
+-- Description:
+--   Selects only the city and state columns from the 
+--   STATION table. Useful for generating a list of 
+--   locations without extra metadata.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT city, state
+FROM STATION;
