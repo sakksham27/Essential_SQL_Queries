@@ -1,0 +1,12 @@
+-- ===================================================
+-- Query: Retrieve and Alphabetically Sort Employee Names
+-- Description:
+--   Selects all employee names from the EMPLOYEE table,
+--   sorted in ascending alphabetical order by name.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT NAME
+FROM EMPLOYEE
+ORDER BY NAME ASC;  -- Sort names in alphabetical order
