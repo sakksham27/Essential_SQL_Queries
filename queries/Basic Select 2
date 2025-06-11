@@ -1,0 +1,14 @@
+-- ===================================================
+-- Query: Retrieve Names of Large US Cities
+-- Description:
+--   Selects the names of cities in the United States 
+--   (identified by country code 'USA') that have a 
+--   population greater than 120,000.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT name
+FROM CITY
+WHERE countrycode = 'USA'      -- Limit to cities in the United States
+  AND population > 120000;     -- Only include cities with population over 120,000
