@@ -1,0 +1,18 @@
+-- ===================================================
+-- Query: Retrieve Cities That Start and End with a Vowel
+-- Description:
+--   Returns distinct city names from the STATION table
+--   where:
+--     - The first letter is a vowel (a, e, i, o, u)
+--     AND
+--     - The last letter is also a vowel
+--   Comparison is case-insensitive using LOWER().
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE 
+  LEFT(LOWER(CITY), 1) IN ('a', 'e', 'i', 'o', 'u')   -- First letter is a vowel
+  AND RIGHT(LOWER(CITY), 1) IN ('a', 'e', 'i', 'o', 'u'); -- Last letter is a vowel
