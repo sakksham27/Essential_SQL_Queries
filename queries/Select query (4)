@@ -1,0 +1,13 @@
+-- ===================================================
+-- Query: Retrieve City by ID
+-- Description:
+--   Selects all details for a specific city from the CITY
+--   table where the city ID is 1661.
+--   Useful for inspecting a single city's full record.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT *
+FROM CITY
+WHERE id = 1661;  -- Unique identifier for the target city
