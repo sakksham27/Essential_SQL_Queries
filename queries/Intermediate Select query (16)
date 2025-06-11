@@ -1,0 +1,18 @@
+-- ===================================================
+-- Query: Retrieve Cities Where Both First and Last Letters Are Not Vowels
+-- Description:
+--   Returns distinct city names from the STATION table
+--   where:
+--     - The first letter is NOT a vowel
+--     AND
+--     - The last letter is NOT a vowel
+--   This is a case-insensitive character match.
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE 
+  LEFT(LOWER(CITY), 1) NOT IN ('a', 'e', 'i', 'o', 'u')  -- First letter is not a vowel
+  AND RIGHT(LOWER(CITY), 1) NOT IN ('a', 'e', 'i', 'o', 'u'); -- Last letter is not a vowel
