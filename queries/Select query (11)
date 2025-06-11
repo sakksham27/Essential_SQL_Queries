@@ -1,0 +1,31 @@
+-- ===================================================
+-- Query: Retrieve Cities Starting with a Vowel (Two Methods)
+-- Description:
+--   Returns distinct city names from the STATION table
+--   where the city name begins with a vowel (A, E, I, O, U).
+--   Two methods are shown below:
+--     Method 1 - Using multiple LIKE conditions
+--     Method 2 - Using LEFT + IN clause
+-- Author: Saksham Sharma
+-- Date: 2025-06-11
+-- ===================================================
+
+
+-- =========================
+-- Method 1: Using LIKE and OR
+-- =========================
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(CITY) LIKE 'a%' 
+   OR LOWER(CITY) LIKE 'e%' 
+   OR LOWER(CITY) LIKE 'i%' 
+   OR LOWER(CITY) LIKE 'o%' 
+   OR LOWER(CITY) LIKE 'u%';
+
+
+-- =========================
+-- Method 2: Using LEFT and IN
+-- =========================
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(LOWER(CITY), 1) IN ('a', 'e', 'i', 'o', 'u');
