@@ -1,0 +1,30 @@
+-- ===================================================
+-- Query: Pivot Names by Occupation Using CASE and ROW_NUMBER()
+-- Description:
+--   This script pivots the OCCUPATIONS table by transforming rows into columns.
+--   It arranges names under their respective occupations (Doctor, Professor, Singer, Actor),
+--   aligning them by row number to produce a clean, readable grid.
+--
+--   Steps:
+--     1. Assigns a row number (rn) within each occupation group using ROW_NUMBER().
+--     2. Uses CASE WHEN inside MAX() to pivot names into separate columns.
+--     3. Groups by rn to align corresponding names across occupations.
+
+-- Author: Saksham Sharma
+-- Date: 2025-06-12
+-- ===================================================
+
+SELECT
+  MAX(CASE WHEN occupation = 'Doctor' THEN name END)    AS Doctor,
+  MAX(CASE WHEN occupation = 'Professor' THEN name END) AS Professor,
+  MAX(CASE WHEN occupation = 'Singer' THEN name END)    AS Singer,
+  MAX(CASE WHEN occupation = 'Actor' THEN name END)     AS Actor
+FROM (
+  SELECT 
+    occupation,
+    name,
+    ROW_NUMBER() OVER (PARTITION BY occupation ORDER BY name) AS rn
+  FROM OCCUPATIONS
+) AS ranked
+GROUP BY rn
+ORDER BY rn;
