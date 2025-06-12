@@ -1,0 +1,26 @@
+-- ===================================================
+-- Query: Format Names with Occupation Initials and Summarize Totals
+-- Description:
+--   This script performs two tasks:
+--     1. Formats each person's name along with the first initial
+--        of their occupation in uppercase (e.g., "John(D)")
+--     2. Displays the total number of people in each occupation
+--        using a descriptive sentence (e.g., "There are a total of 4 doctors.")
+-- Author: Saksham Sharma
+-- Date: 2025-06-12
+-- ===================================================
+
+-- Step 1: Format name with occupation initial
+SELECT 
+  CONCAT(name, '(', LEFT(UPPER(occupation), 1), ')') AS info
+FROM OCCUPATIONS
+ORDER BY name;
+
+-- Step 2: Count and summarize each occupation
+SELECT 
+  'There are a total of ', 
+  COUNT(occupation), 
+  CONCAT(LOWER(occupation), 's.')
+FROM OCCUPATIONS
+GROUP BY occupation
+ORDER BY COUNT(occupation);
